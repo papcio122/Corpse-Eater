@@ -7,12 +7,13 @@ public class WormController : MonoBehaviour
 
     public List<Transform> bodyParts = new List<Transform>();
 
-    public float minDistance = 0.25f;
+    public float minDistance = 1f;
 
     public int beginSize;
 
     public float speed = 1;
     public float rotationSpeed = 50;
+    public float backDistance = 2;
 
     public GameObject bodyprefabs;
 
@@ -39,15 +40,31 @@ public class WormController : MonoBehaviour
         {
             AddBodyPart();
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RemoveBodyParts(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            BounceBack();
+        }
     }
 
     public void Move()
     {
         float curspeed = speed;
 
-        if (Input.GetAxis("Horizontal") != 0)
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        if (vertical != 0 || horizontal != 0)
         {
-            bodyParts[0].Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
+            Vector3 target = new Vector3(-vertical * float.MaxValue, horizontal * float.MaxValue);
+            Vector2 direction = target - bodyParts[0].transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            bodyParts[0].transform.rotation = Quaternion.Slerp(bodyParts[0].transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
         bodyParts[0].Translate(-1*bodyParts[0].up * curspeed * Time.smoothDeltaTime, Space.World);
@@ -60,9 +77,6 @@ public class WormController : MonoBehaviour
             dis = Vector3.Distance(PrevBodyPart.position, curBodyPart.position);
 
             Vector3 newpos = PrevBodyPart.position;
-
-            newpos.y = bodyParts[0].position.y;
-            newpos.x = bodyParts[0].position.x;
 
             float T = Time.deltaTime * dis / minDistance * curspeed;
             curBodyPart.position = Vector3.Slerp(curBodyPart.position, newpos, T);
@@ -79,5 +93,27 @@ public class WormController : MonoBehaviour
         newpart.SetParent(transform);
 
         bodyParts.Add(newpart);
+    }
+
+    public void RemoveBodyParts(int count)
+    {
+        if (count >= bodyParts.Count)
+        {
+            count = bodyParts.Count - 1;
+        }
+        for (int i = 0; i < count; i++)
+        {
+            int index = bodyParts.Count - 1;
+            Destroy(bodyParts[index].gameObject);
+            bodyParts.RemoveAt(index);
+        }
+    }
+
+    public void BounceBack()
+    {
+        for (int i = bodyParts.Count - 1; i >= 0; i--)
+        {
+            bodyParts[i].Translate(bodyParts[i].up * backDistance, Space.World);
+        }
     }
 }
