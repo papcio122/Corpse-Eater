@@ -6,20 +6,17 @@ public class WormController : MonoBehaviour
 {
 
     public List<Transform> bodyParts = new List<Transform>();
+    public GameObject bodyprefabs;
 
     public float minDistance = 1f;
-
     public int beginSize;
 
     public float speed = 1;
     public float rotationSpeed = 50;
     public float backDistance = 2;
 
-    public GameObject bodyprefabs;
-
-    private float dis;
-    private Transform curBodyPart;
-    private Transform PrevBodyPart;
+    public bool isSlowed = false;
+    public float slowTime = 2f;
 
 
     // Start is called before the first frame update
@@ -34,8 +31,6 @@ public class WormController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             AddBodyPart();
@@ -49,12 +44,28 @@ public class WormController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             BounceBack();
+            Slow(2);
+        }
+
+        Move();
+
+        if (isSlowed)
+        {
+            slowTime -= Time.deltaTime;
+            if (slowTime < 0)
+            {
+                isSlowed = false;
+            }
         }
     }
 
     public void Move()
     {
         float curspeed = speed;
+        if (isSlowed)
+        {
+            curspeed /= 2;
+        }
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -67,14 +78,14 @@ public class WormController : MonoBehaviour
             bodyParts[0].transform.rotation = Quaternion.Slerp(bodyParts[0].transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
-        bodyParts[0].Translate(-1*bodyParts[0].up * curspeed * Time.smoothDeltaTime, Space.World);
+        bodyParts[0].Translate(-1*bodyParts[0].up * curspeed * Time.deltaTime, Space.World);
 
         for (int i = 1; i < bodyParts.Count; i++)
         {
-            curBodyPart = bodyParts[i];
-            PrevBodyPart = bodyParts[i - 1];
+            Transform curBodyPart = bodyParts[i];
+            Transform PrevBodyPart = bodyParts[i - 1];
 
-            dis = Vector3.Distance(PrevBodyPart.position, curBodyPart.position);
+            float dis = Vector3.Distance(PrevBodyPart.position, curBodyPart.position);
 
             Vector3 newpos = PrevBodyPart.position;
 
@@ -115,5 +126,11 @@ public class WormController : MonoBehaviour
         {
             bodyParts[i].Translate(bodyParts[i].up * backDistance, Space.World);
         }
+    }
+
+    public void Slow(float seconds)
+    {
+        isSlowed = true;
+        slowTime = seconds;
     }
 }
