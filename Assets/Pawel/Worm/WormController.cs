@@ -44,7 +44,6 @@ public class WormController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             BounceBack();
-            Slow(2);
         }
 
         Move();
@@ -126,11 +125,15 @@ public class WormController : MonoBehaviour
         {
             bodyParts[i].Translate(bodyParts[i].up * backDistance, Space.World);
         }
+        Slow(2);
     }
 
     public void Slow(float seconds)
     {
-        isSlowed = true;
+        if (!isSlowed)
+        {
+            isSlowed = true;
+        }
         slowTime = seconds;
     }
 }
