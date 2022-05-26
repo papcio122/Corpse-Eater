@@ -7,8 +7,6 @@ public class WormController : MonoBehaviour
 
     public List<Transform> bodyParts = new List<Transform>();
     public GameObject bodyprefabs;
-
-    public float minDistance = 1f;
     public int beginSize;
 
     public float speed = 1;
@@ -70,14 +68,14 @@ public class WormController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         if (vertical != 0 || horizontal != 0)
         {
-            Vector3 target = new Vector3(-vertical * float.MaxValue, horizontal * float.MaxValue);
+            Vector3 target = new Vector3(vertical * float.MaxValue, -horizontal * float.MaxValue);
             Vector2 direction = target - bodyParts[0].transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             bodyParts[0].transform.rotation = Quaternion.Slerp(bodyParts[0].transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
-        bodyParts[0].Translate(-1*bodyParts[0].up * curspeed * Time.deltaTime, Space.World);
+        bodyParts[0].Translate(bodyParts[0].up * curspeed * Time.deltaTime, Space.World);
 
         for (int i = 1; i < bodyParts.Count; i++)
         {
@@ -88,9 +86,9 @@ public class WormController : MonoBehaviour
 
             Vector3 newpos = PrevBodyPart.position;
 
-            float T = Time.deltaTime * dis / minDistance * curspeed;
-            curBodyPart.position = Vector3.Slerp(curBodyPart.position, newpos, T);
-            curBodyPart.rotation = Quaternion.Slerp(curBodyPart.rotation, PrevBodyPart.rotation, T);
+            float T = Time.deltaTime * dis * curspeed;
+            curBodyPart.position = Vector3.Lerp(curBodyPart.position, newpos, T);
+            curBodyPart.rotation = Quaternion.Lerp(curBodyPart.rotation, PrevBodyPart.rotation, T);
 
         }
     }
