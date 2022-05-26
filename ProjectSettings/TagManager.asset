@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2254386245
+    locked: 0
+  - name: Meat
+    uniqueID: 3500890137
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
