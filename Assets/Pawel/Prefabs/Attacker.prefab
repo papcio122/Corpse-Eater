@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8853350244830080362}
   - component: {fileID: 7027333446369448222}
   - component: {fileID: 8010354052510515629}
-  - component: {fileID: 8731534474064046497}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -121,24 +120,3 @@ MonoBehaviour:
   timeToDestroy: 0.75
   timeSinceSpawn: 0
   readyToHit: 0
---- !u!50 &8731534474064046497
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604654236442120181}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
