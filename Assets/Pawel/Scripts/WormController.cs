@@ -8,10 +8,12 @@ public class WormController : MonoBehaviour
     public List<Transform> bodyParts = new List<Transform>();
     public GameObject bodyprefabs;
     public int beginSize;
+    public List<Sprite> levelSprites;
 
     public float speed = 1;
     public float rotationSpeed = 50;
     public float backDistance = 2;
+    public int level = 0;
 
     public bool isSlowed = false;
     public float slowTime = 2f;
@@ -42,6 +44,16 @@ public class WormController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             BounceBack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LevelUp();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            LevelDown();
         }
 
         Move();
@@ -121,7 +133,7 @@ public class WormController : MonoBehaviour
     {
         for (int i = bodyParts.Count - 1; i >= 0; i--)
         {
-            bodyParts[i].Translate(bodyParts[i].up * backDistance, Space.World);
+            bodyParts[i].Translate(-bodyParts[i].up * backDistance, Space.World);
         }
         Slow(2);
     }
@@ -133,5 +145,36 @@ public class WormController : MonoBehaviour
             isSlowed = true;
         }
         slowTime = seconds;
+    }
+
+    public void LevelUp()
+    {
+        if (level < levelSprites.Count - 1)
+        {
+            level++;
+            UpdateHeadSprite();
+        }
+    }
+    public void LevelDown()
+    {
+        if (level > 0)
+        {
+            level--;
+            UpdateHeadSprite();
+        }
+    }
+
+    public void UpdateHeadSprite()
+    {
+        bodyParts[0].GetComponent<SpriteRenderer>().sprite = levelSprites[level];
+    }
+
+    public void SetLevel(int newLevel)
+    {
+        if (newLevel >= 0 || newLevel < levelSprites.Count)
+        {
+            level = newLevel;
+            UpdateHeadSprite();
+        }
     }
 }

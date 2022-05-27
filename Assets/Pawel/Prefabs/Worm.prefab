@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9ddf7a9aafd1a9e419094219a4fcb64a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1522e476a22d228418ed8a19ad160469, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -172,8 +172,14 @@ MonoBehaviour:
   - {fileID: 6390887276860681426}
   bodyprefabs: {fileID: 9078718877937475962, guid: b572431cc09f83944b258203061d8c45, type: 3}
   beginSize: 5
+  levelSprites:
+  - {fileID: 21300000, guid: 1522e476a22d228418ed8a19ad160469, type: 3}
+  - {fileID: 21300000, guid: 58b12556189ceaf4ba158d309b951c7d, type: 3}
+  - {fileID: 21300000, guid: 590a4e5ffa8a2c8469d0b1250667fc29, type: 3}
+  - {fileID: 21300000, guid: d5a2ebbc57c7d264db7daf14a05085d5, type: 3}
   speed: 2
   rotationSpeed: 1
   backDistance: 2
+  level: 0
   isSlowed: 0
   slowTime: 2
