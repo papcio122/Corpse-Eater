@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d71c062a0273bd746bfa65496e7620b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!58 &7027333446369448222
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,7 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSize: 20
   timeToHit: 1.5
-  attackSprite: {fileID: 21300000, guid: a8332c37126b152498ed7b16be6b5386, type: 3}
-  timeToDestroy: 0.75
+  attackSprite: {fileID: 21300000, guid: 195c84cc28785b043bf4fe4120525496, type: 3}
+  timeToDestroy: 0.5
   timeSinceSpawn: 0
   readyToHit: 0
+  sr: {fileID: 0}
+  coll: {fileID: 0}

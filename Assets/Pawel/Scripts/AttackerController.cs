@@ -12,12 +12,21 @@ public class AttackerController : MonoBehaviour
     public float timeSinceSpawn;
     public bool readyToHit;
 
+    public SpriteRenderer sr;
+    public Collider2D coll;
+
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        coll = GetComponent<Collider2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         readyToHit = false;
         timeSinceSpawn = 0;
-        GetComponent<Collider2D>().enabled = false;
+        coll.enabled = false;
         transform.localScale *= startSize;
     }
 
@@ -35,9 +44,10 @@ public class AttackerController : MonoBehaviour
             }
             if (!readyToHit)
             {
-                GetComponent<Collider2D>().enabled = true;
+                coll.enabled = true;
                 readyToHit = true;
-                GetComponent<SpriteRenderer>().sprite = attackSprite;
+                sr.sprite = attackSprite;
+                sr.sortingOrder = 4;
             }
         } else
         {
@@ -53,7 +63,7 @@ public class AttackerController : MonoBehaviour
         if (worm)
         {
             worm.RemoveBodyParts(1);
-            GetComponent<Collider2D>().enabled = false;
+            coll.enabled = false;
         }
     }
 }
