@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6390887276860681425}
   - component: {fileID: 3271434933605722366}
   - component: {fileID: 232829439114841970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -110,14 +110,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6390887276860681427}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6390887277610955280}
   - component: {fileID: 6390887277610955281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Worm
   m_TagString: Player
   m_Icon: {fileID: 0}
