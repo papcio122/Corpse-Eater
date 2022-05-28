@@ -123,6 +123,143 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &266256280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9056542269932329314, guid: d719a26c620ed3f44ab3d55288ee09af, type: 3}
+  m_PrefabInstance: {fileID: 9056542267995221116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &266256284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266256280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 0
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 1
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &266256285
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266256280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
+--- !u!1 &351162188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8930977491741048787, guid: 914620af92be79547adea6f78db4abbb, type: 3}
+  m_PrefabInstance: {fileID: 8930977492067510129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &351162191
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351162188}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+--- !u!1 &374886673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7478808200833059301, guid: f128b085f0af06341ad50c7d1ccca81c, type: 3}
+  m_PrefabInstance: {fileID: 7478808201746810900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &374886677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374886673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 0
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 3
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &374886678
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374886673}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &542554589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +319,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b7febb1baad43564e8b030908744debe, type: 3}
+--- !u!1 &629444562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6925457506543603142, guid: a008e598ed6aaa34b9d833873a9a8bf2, type: 3}
+  m_PrefabInstance: {fileID: 6925457506260341754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &629444566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629444562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 0
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 4
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &629444567
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629444562}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &881564282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +555,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 526a94e63db25064a9714fb5a76cc77e, type: 3}
+--- !u!1 &1040637157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4890953318632290215, guid: d54dce91318b11647935e6070b28f166, type: 3}
+  m_PrefabInstance: {fileID: 4890953318501234292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040637161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040637157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 0
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 2
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &1040637162
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040637157}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &1323872970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -434,6 +665,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 526a94e63db25064a9714fb5a76cc77e, type: 3}
+--- !u!1 &1709633797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8930977491772372367, guid: 914620af92be79547adea6f78db4abbb, type: 3}
+  m_PrefabInstance: {fileID: 8930977492067510129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!19719996 &1709633801
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709633797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
+--- !u!1 &2064731409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925863747579873878, guid: 4d0064f544554984dbb8ce7dabb4b1b4, type: 3}
+  m_PrefabInstance: {fileID: 8925863749031841049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064731413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064731409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 1
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 1
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &2064731414
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064731409}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &2081742027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,6 +821,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b94b7c65f00e5584caef4bf29d8759b7, type: 3}
+--- !u!1 &2123106442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5291305141715984660, guid: c3a2e05ff84b5eb49a4070bcf31ab7d1, type: 3}
+  m_PrefabInstance: {fileID: 5291305141439864946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2123106446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123106442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea3a2c2d8d26a48ad73fbcf802abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatable: 1
+  meat: {fileID: 0}
+  points: 0
+  general: {fileID: 0}
+  requiredLevel: 1
+  p_flesh: 1
+  p_bonus_1: 2
+  p_bonus_2: 3
+  p_bonus_3: 4
+  p_bone_w: 10
+  p_bone_v: 20
+  p_bone_b: 30
+  p_bone_g: 40
+--- !u!19719996 &2123106447
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123106442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!1001 &4036154674190913777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -871,6 +1218,10 @@ PrefabInstance:
     - target: {fileID: 8925863749507230831, guid: 4d0064f544554984dbb8ce7dabb4b1b4, type: 3}
       propertyPath: m_Name
       value: Flesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925863749507230831, guid: 4d0064f544554984dbb8ce7dabb4b1b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
