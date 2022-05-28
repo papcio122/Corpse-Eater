@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSize: 20
-  timeToHit: 1.5
+  timeToHit: 0.7
   attackSprite: {fileID: 21300000, guid: 195c84cc28785b043bf4fe4120525496, type: 3}
   timeToDestroy: 0.5
   timeSinceSpawn: 0

@@ -73,7 +73,7 @@ public class WormController : MonoBehaviour
     public void Move()
     {
         float curspeed = speed;
-        if (isSlowed)
+        if (Input.GetKey(KeyCode.Space))
         {
             curspeed /= 2;
         }
