@@ -46,8 +46,7 @@ public class Eat : MonoBehaviour
                 ChoosePoints(tileName);
                 meat.SetTile(meat.WorldToCell(hitPosition), null);
 
-                general.GetComponent<General>().score += addpts;
-
+                general.GetComponent<Score>().updateScore(addpts);
             }
 
         }

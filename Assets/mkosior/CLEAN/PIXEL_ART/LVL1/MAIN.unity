@@ -247,7 +247,7 @@ MonoBehaviour:
   eatable: 0
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 1
   p_flesh: 1
   p_bonus_1: 2
@@ -396,7 +396,7 @@ MonoBehaviour:
   eatable: 0
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 3
   p_flesh: 1
   p_bonus_1: 2
@@ -507,6 +507,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1762039569}
     m_Modifications:
+    - target: {fileID: 9223106441198009122, guid: 1349e199243c9a74da3a6d2d69f9b565, type: 3}
+      propertyPath: m_margin.z
+      value: -32.043213
+      objectReference: {fileID: 0}
     - target: {fileID: 9223106441894610630, guid: 1349e199243c9a74da3a6d2d69f9b565, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -573,7 +577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9223106441894610630, guid: 1349e199243c9a74da3a6d2d69f9b565, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 540
+      value: 512.5
       objectReference: {fileID: 0}
     - target: {fileID: 9223106441894610630, guid: 1349e199243c9a74da3a6d2d69f9b565, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -682,7 +686,7 @@ MonoBehaviour:
   eatable: 0
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 4
   p_flesh: 1
   p_bonus_1: 2
@@ -1053,7 +1057,7 @@ MonoBehaviour:
   eatable: 0
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 2
   p_flesh: 1
   p_bonus_1: 2
@@ -1286,6 +1290,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1398925010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9223106441894610633, guid: 1349e199243c9a74da3a6d2d69f9b565, type: 3}
+  m_PrefabInstance: {fileID: 531820514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1709633797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8930977491772372367, guid: 914620af92be79547adea6f78db4abbb, type: 3}
@@ -1601,7 +1610,7 @@ MonoBehaviour:
   eatable: 1
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 1
   p_flesh: 1
   p_bonus_1: 2
@@ -1685,6 +1694,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6390887277610955281, guid: b94b7c65f00e5584caef4bf29d8759b7, type: 3}
+      propertyPath: isSlowed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390887277610955281, guid: b94b7c65f00e5584caef4bf29d8759b7, type: 3}
       propertyPath: rotationSpeed
       value: 9
       objectReference: {fileID: 0}
@@ -1735,7 +1748,7 @@ MonoBehaviour:
   eatable: 1
   meat: {fileID: 0}
   points: 0
-  general: {fileID: 0}
+  general: {fileID: 1398925010}
   requiredLevel: 1
   p_flesh: 1
   p_bonus_1: 2
