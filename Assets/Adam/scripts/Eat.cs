@@ -10,6 +10,7 @@ public class Eat : MonoBehaviour
     public Tilemap meat;
     public int points = 0;
     public GameObject general;
+    public int requiredLevel = int.MaxValue;
 
     int addpts;
     string tileName; 
@@ -32,13 +33,14 @@ public class Eat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            int wormLevel = collision.gameObject.GetComponentInParent<WormController>().level;
             Vector3 hitPosition = Vector3.zero;
 
             hitPosition.x = collision.gameObject.transform.position.x;
             hitPosition.y = collision.gameObject.transform.position.y;
 
             //Debug.Log(hitPosition);
-            if (meat.WorldToCell(hitPosition) != null && eatable)
+            if (meat.WorldToCell(hitPosition) != null && (eatable || requiredLevel <= wormLevel))
             {
                 tileName = meat.GetTile(meat.WorldToCell(hitPosition)).name;
                 ChoosePoints(tileName);

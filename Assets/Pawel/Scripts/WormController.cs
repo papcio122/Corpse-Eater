@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WormController : MonoBehaviour
 {
-
+    public AudioSource audioSource;
     public List<Transform> bodyParts = new List<Transform>();
     public GameObject bodyprefabs;
     public int beginSize;
     public List<Sprite> levelSprites;
+    public AudioClip hitClip;
 
     public float speed = 1;
     public float rotationSpeed = 50;
@@ -17,6 +18,7 @@ public class WormController : MonoBehaviour
 
     public bool isSlowed = false;
     public float slowTime = 2f;
+    public float minDist = 0.5f;
 
 
     // Start is called before the first frame update
@@ -98,7 +100,7 @@ public class WormController : MonoBehaviour
 
             Vector3 newpos = PrevBodyPart.position;
 
-            float T = Time.deltaTime * dis * curspeed;
+            float T = Time.deltaTime * dis / minDist * curspeed;
             curBodyPart.position = Vector3.Lerp(curBodyPart.position, newpos, T);
             curBodyPart.rotation = Quaternion.Lerp(curBodyPart.rotation, PrevBodyPart.rotation, T);
 
@@ -126,6 +128,8 @@ public class WormController : MonoBehaviour
             int index = bodyParts.Count - 1;
             Destroy(bodyParts[index].gameObject);
             bodyParts.RemoveAt(index);
+            audioSource.clip = hitClip;
+            audioSource.Play();
         }
     }
 
@@ -133,7 +137,8 @@ public class WormController : MonoBehaviour
     {
         for (int i = bodyParts.Count - 1; i >= 0; i--)
         {
-            bodyParts[i].Translate(-bodyParts[i].up * backDistance, Space.World);
+            Vector3 direction = -bodyParts[0].up;
+            bodyParts[i].Translate(direction * backDistance, Space.World);
         }
         Slow(2);
     }

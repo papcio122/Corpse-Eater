@@ -12,13 +12,18 @@ public class AttackerController : MonoBehaviour
     public float timeSinceSpawn;
     public bool readyToHit;
 
-    public SpriteRenderer sr;
+    public AudioClip attackClip;
+    public AudioClip hitClip;
+
+    public SpriteRenderer spriteRenderer;
     public Collider2D coll;
+    public AudioSource audioSource;
 
     private void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -44,10 +49,12 @@ public class AttackerController : MonoBehaviour
             }
             if (!readyToHit)
             {
+                audioSource.clip = attackClip;
+                audioSource.Play();
                 coll.enabled = true;
                 readyToHit = true;
-                sr.sprite = attackSprite;
-                sr.sortingOrder = 4;
+                spriteRenderer.sprite = attackSprite;
+                spriteRenderer.sortingOrder = 4;
             }
         } else
         {
