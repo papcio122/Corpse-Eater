@@ -20,6 +20,10 @@ public class WormController : MonoBehaviour
     public float slowTime = 2f;
     public float minDist = 0.5f;
 
+    public GameObject deathScreen;
+    public GameObject winScreen;
+    public Clock clock;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +61,7 @@ public class WormController : MonoBehaviour
         {
             LevelDown();
         }
+
 
         Move();
 
@@ -111,6 +116,19 @@ public class WormController : MonoBehaviour
         }
     }
 
+    public void death()
+    {
+        speed = 0;
+        clock.isRunning = false;
+        deathScreen.SetActive(true);
+    }
+
+    public void win()
+    {
+        speed = 0;
+        clock.isRunning = false;
+        winScreen.SetActive(true);
+    }
 
     public void AddBodyPart()
     {
@@ -123,10 +141,17 @@ public class WormController : MonoBehaviour
 
     public void RemoveBodyParts(int count)
     {
+        if(bodyParts.Count <= 2)
+        {
+            death();
+            return;
+        }
+
         if (count >= bodyParts.Count)
         {
             count = bodyParts.Count - 1;
         }
+
         for (int i = 0; i < count; i++)
         {
             int index = bodyParts.Count - 1;
@@ -162,6 +187,10 @@ public class WormController : MonoBehaviour
         {
             level++;
             UpdateHeadSprite();
+        }
+        else
+        {
+            win();
         }
     }
     public void LevelDown()
