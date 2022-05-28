@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/mkosior/CLEAN/PIXEL_ART/START/MAIN.unity
+    guid: 2e7ebdb3867c08b45b54876f8393b137
+  - enabled: 1
+    path: Assets/mkosior/CLEAN/PIXEL_ART/LVL1/MAIN.unity
+    guid: 64ebee1cb0a6bcf41aaf2b213759d19f
   m_configObjects: {}
