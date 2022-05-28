@@ -421,12 +421,13 @@ MonoBehaviour:
   beginSize: 5
   levelSprites:
   - {fileID: 21300000, guid: 1522e476a22d228418ed8a19ad160469, type: 3}
+  - {fileID: 21300000, guid: 0bddb8c118e82534bb1a0dfd4c9f66c2, type: 3}
   - {fileID: 21300000, guid: 58b12556189ceaf4ba158d309b951c7d, type: 3}
   - {fileID: 21300000, guid: 590a4e5ffa8a2c8469d0b1250667fc29, type: 3}
   - {fileID: 21300000, guid: d5a2ebbc57c7d264db7daf14a05085d5, type: 3}
   hitClip: {fileID: 8300000, guid: 201292143f980b246a93f611907dcb3d, type: 3}
-  speed: 3
-  rotationSpeed: 6
+  speed: 4
+  rotationSpeed: 9
   backDistance: 2
   level: 0
   isSlowed: 0
