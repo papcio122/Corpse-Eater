@@ -77,6 +77,10 @@ public class WormController : MonoBehaviour
         {
             curspeed /= 2;
         }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            curspeed *= 2;
+        }
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
