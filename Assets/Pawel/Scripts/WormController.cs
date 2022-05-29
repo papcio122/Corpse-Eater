@@ -11,6 +11,9 @@ public class WormController : MonoBehaviour
     public List<Sprite> levelSprites;
     public AudioClip hitClip;
     public AudioClip growClip;
+    public AudioClip winClip;
+    public AudioClip looseClip;
+    public GameObject mainSound;
     public float cooldownDamage = 1f;
     float cdDamage;
 
@@ -248,6 +251,8 @@ public class WormController : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         winScreen.SetActive(true);
+        mainSound.GetComponent<AudioSource>().clip = winClip;
+        mainSound.GetComponent<AudioSource>().Play();
     }
 
     IEnumerator DeathEnumerator()
@@ -261,5 +266,9 @@ public class WormController : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         deathScreen.SetActive(true);
+
+        mainSound.GetComponent<AudioSource>().clip = looseClip;
+        mainSound.GetComponent<AudioSource>().loop = false;
+        mainSound.GetComponent<AudioSource>().Play();
     }
 }
