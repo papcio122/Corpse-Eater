@@ -43,7 +43,7 @@ public class Eat : MonoBehaviour
 
                     ChoosePoints(tileName);
                     meat.SetTile(meat.WorldToCell(hitPosition), null);
-
+                    GetComponent<AudioSource>().Play();
 
                     general.GetComponent<Score>().updateScore(addpts);
                 }

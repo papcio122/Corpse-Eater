@@ -10,6 +10,7 @@ public class WormController : MonoBehaviour
     public int beginSize;
     public List<Sprite> levelSprites;
     public AudioClip hitClip;
+    public AudioClip growClip;
     public float cooldownDamage = 1f;
     float cdDamage;
 
@@ -150,6 +151,8 @@ public class WormController : MonoBehaviour
         newpart.SetParent(transform);
 
         bodyParts.Add(newpart);
+        audioSource.clip = growClip;
+        audioSource.Play();
     }
 
     public void RemoveBodyParts(int count)
