@@ -8,6 +8,7 @@ public class Score : MonoBehaviour
 {
     public TMP_Text textScore;
     public TMP_Text nextLife;
+    public Slider slider;
     public int score = 0;
 
     public int previousSegmentPts = 0;
@@ -20,6 +21,9 @@ public class Score : MonoBehaviour
     {
         textScore.text = string.Format("{0:000000}", score);
         nextLife.text = nextSegmentPts.ToString();
+        slider.maxValue = nextSegmentPts;
+        slider.value = score;
+
     }
 
     public void Start()
