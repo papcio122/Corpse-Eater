@@ -10,6 +10,8 @@ public class WormController : MonoBehaviour
     public int beginSize;
     public List<Sprite> levelSprites;
     public AudioClip hitClip;
+    public float cooldownDamage = 1f;
+    float cdDamage;
 
     public float speed = 1;
     public float rotationSpeed = 50;
@@ -28,6 +30,7 @@ public class WormController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cdDamage = cooldownDamage;
         for (int i = 0; i < beginSize - 1; i++)
         {
             AddBodyPart();
@@ -62,6 +65,7 @@ public class WormController : MonoBehaviour
         //    LevelDown();
         //}
 
+        cdDamage -= Time.deltaTime;
         Move();
 
         if (isSlowed)
@@ -150,24 +154,29 @@ public class WormController : MonoBehaviour
 
     public void RemoveBodyParts(int count)
     {
-        if(bodyParts.Count <= 2)
+        if (cdDamage <= 0)
         {
-            death();
-            return;
-        }
+            if (bodyParts.Count <= 2)
+            {
+                death();
+                return;
+            }
 
-        if (count >= bodyParts.Count)
-        {
-            count = bodyParts.Count - 1;
-        }
+            if (count >= bodyParts.Count)
+            {
+                count = bodyParts.Count - 1;
+            }
 
-        for (int i = 0; i < count; i++)
-        {
-            int index = bodyParts.Count - 1;
-            Destroy(bodyParts[index].gameObject);
-            bodyParts.RemoveAt(index);
-            audioSource.clip = hitClip;
-            audioSource.Play();
+            for (int i = 0; i < count; i++)
+            {
+                int index = bodyParts.Count - 1;
+                Destroy(bodyParts[index].gameObject);
+                bodyParts.RemoveAt(index);
+                audioSource.clip = hitClip;
+                audioSource.Play();
+            }
+
+            cdDamage = cooldownDamage;
         }
     }
 
