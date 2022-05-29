@@ -37,11 +37,16 @@ public class Eat : MonoBehaviour
             //Debug.Log(hitPosition);
             if (meat.WorldToCell(hitPosition) != null && (eatable || requiredLevel <= wormLevel))
             {
-                tileName = meat.GetTile(meat.WorldToCell(hitPosition)).name;
-                ChoosePoints(tileName);
-                meat.SetTile(meat.WorldToCell(hitPosition), null);
+                if (meat.GetTile(meat.WorldToCell(hitPosition)) != null)
+                {
+                    tileName = meat.GetTile(meat.WorldToCell(hitPosition)).name;
 
-                general.GetComponent<Score>().updateScore(addpts);
+                    ChoosePoints(tileName);
+                    meat.SetTile(meat.WorldToCell(hitPosition), null);
+
+
+                    general.GetComponent<Score>().updateScore(addpts);
+                }
             }
 
         }
