@@ -86,7 +86,7 @@ public class WormController : MonoBehaviour
         {
             curspeed /= 2;
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             curspeed *= 2;
         }
