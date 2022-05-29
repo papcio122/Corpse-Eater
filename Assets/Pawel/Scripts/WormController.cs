@@ -37,31 +37,30 @@ public class WormController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            AddBodyPart();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    AddBodyPart();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            RemoveBodyParts(3);
-        }
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    RemoveBodyParts(3);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            BounceBack();
-        }
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    BounceBack();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            LevelUp();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    LevelUp();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            LevelDown();
-        }
-
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    LevelDown();
+        //}
 
         Move();
 
@@ -120,14 +119,24 @@ public class WormController : MonoBehaviour
     {
         speed = 0;
         clock.isRunning = false;
-        deathScreen.SetActive(true);
+        FinishGame();
+        StartCoroutine(DeathEnumerator());
+    }
+
+    private void FinishGame()
+    {
+        CameraController cameraController = FindObjectOfType<CameraController>();
+        cameraController.finished = true;
+        AttackerSpawnerController attackerSpawnerController = FindObjectOfType<AttackerSpawnerController>();
+        attackerSpawnerController.interval = float.MaxValue;
     }
 
     public void win()
     {
         speed = 0;
         clock.isRunning = false;
-        winScreen.SetActive(true);
+        FinishGame();
+        StartCoroutine(WinEnumerator());
     }
 
     public void AddBodyPart()
@@ -214,5 +223,31 @@ public class WormController : MonoBehaviour
             level = newLevel;
             UpdateHeadSprite();
         }
+    }
+
+    IEnumerator WinEnumerator()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        winScreen.SetActive(true);
+    }
+
+    IEnumerator DeathEnumerator()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        deathScreen.SetActive(true);
     }
 }

@@ -13,15 +13,10 @@ public class Eat : MonoBehaviour
     public int requiredLevel = int.MaxValue;
 
     int addpts;
-    string tileName; 
-    public int p_flesh = 1;
+    string tileName;
     public int p_bonus_1 = 2;
-    public int p_bonus_2 = 3;
-    public int p_bonus_3 = 4;
-    public int p_bone_w = 10;
-    public int p_bone_v = 20;
-    public int p_bone_b = 30;
-    public int p_bone_g = 40;
+    public int p_bonus_2 = 4;
+    public int p_bonus_3 = 8;
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +51,6 @@ public class Eat : MonoBehaviour
     {
         switch (name)
         {
-            case "FLESH":
-                addpts = p_flesh;
-                break;
             case "BONUS_1":
                 addpts = p_bonus_1;
                 break;
@@ -67,18 +59,6 @@ public class Eat : MonoBehaviour
                 break;
             case "BONUS_3":
                 addpts = p_bonus_3;
-                break;
-            case var bone when new Regex(@"WBONE\w+").IsMatch(bone):
-                addpts = p_bone_w;
-                break;
-            case var bone when new Regex(@"VBONE\w+").IsMatch(bone):
-                addpts = p_bone_v;
-                break;
-            case var bone when new Regex(@"BBONE\w+").IsMatch(bone):
-                addpts = p_bone_b;
-                break;
-            case var bone when new Regex(@"GBONE\w+").IsMatch(bone):
-                addpts = p_bone_g;
                 break;
             default:
                 addpts = 0;

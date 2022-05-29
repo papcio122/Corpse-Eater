@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8749047191271520926
 Camera:
@@ -62,7 +62,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 54.685184
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -101,9 +101,13 @@ MonoBehaviour:
   follow: {fileID: 0}
   followSpeed: 1
   cameraComponent: {fileID: 0}
-  targetSize: 5
-  sizeSpeed: 5
+  defaultSize: 5
+  scaleSpeed: 20
   newSize: 0
+  zoomScale: 5
+  finishPosition: {x: 8.9, y: 18.1, z: -10}
+  finishSize: 55
+  finished: 0
 --- !u!82 &6246622883035018366
 AudioSource:
   m_ObjectHideFlags: 0

@@ -433,6 +433,9 @@ MonoBehaviour:
   isSlowed: 0
   slowTime: 2
   minDist: 0.4
+  deathScreen: {fileID: 0}
+  winScreen: {fileID: 0}
+  clock: {fileID: 0}
 --- !u!82 &6956358378971828222
 AudioSource:
   m_ObjectHideFlags: 0
