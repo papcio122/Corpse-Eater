@@ -10,6 +10,7 @@ public class AttackerSpawnerController : MonoBehaviour
     public float basicProbability;
     public float probabilityIncrease;
     public float maxDistance;
+    public float firstAttack = 3f;
 
     public float currentProbability;
     public float timeSinceAttack;
@@ -25,21 +26,28 @@ public class AttackerSpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeSinceAttack > interval)
+        firstAttack -= Time.deltaTime;
+        if(firstAttack <= 0)
         {
-            if (Random.Range(1, 100) <= currentProbability)
+            if (timeSinceAttack > interval)
             {
-                Vector2 attackPosition = target.transform.position + (Vector3)(Random.insideUnitCircle * maxDistance);
-                Instantiate(attacker, attackPosition, Quaternion.identity);
-                currentProbability = basicProbability;
-            } else
-            {
-                currentProbability += probabilityIncrease;
+                if (Random.Range(1, 100) <= currentProbability)
+                {
+                    Vector2 attackPosition = target.transform.position + (Vector3)(Random.insideUnitCircle * maxDistance);
+                    Instantiate(attacker, attackPosition, Quaternion.identity);
+                    currentProbability = basicProbability;
+                }
+                else
+                {
+                    currentProbability += probabilityIncrease;
+                }
+                timeSinceAttack = 0;
             }
-            timeSinceAttack = 0;
-        } else
-        {
-            timeSinceAttack += Time.deltaTime;
+            else
+            {
+                timeSinceAttack += Time.deltaTime;
+            }
         }
+        
     }
 }
