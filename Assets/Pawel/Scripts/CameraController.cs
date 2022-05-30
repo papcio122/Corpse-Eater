@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
         float dis = Vector3.Distance(targetPosition, transform.position);
 
         float t = Time.deltaTime * dis * followSpeed;
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetButton("Fire1"))
         {
             targetSize *= zoomScale;
         }
