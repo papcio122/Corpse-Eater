@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
     private void displayScore()
     {
         textScore.text = string.Format("{0:000000}", score);
-        nextLife.text = nextSegmentPts.ToString();
+        //nextLife.text = nextSegmentPts.ToString();
         slider.maxValue = nextSegmentPts;
         slider.value = score;
 
